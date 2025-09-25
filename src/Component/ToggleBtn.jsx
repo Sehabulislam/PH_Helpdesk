@@ -1,12 +1,10 @@
 import React from "react";
-import Container from "./Container";
 
 const ToggleBtn = ({ toggleStatus, setToggleStatus }) => {
 
     const btns = ["All","Pending","Submitted","Reviewed"]
   return (
-    <Container>
-      <div className="text-right mb-6">
+      <div className="text-right my-6 ">
         {
             btns.map((btn,index) => {
                 // console.log(btn);
@@ -52,7 +50,6 @@ const ToggleBtn = ({ toggleStatus, setToggleStatus }) => {
           Reviewed
         </button> */}
       </div>
-    </Container>
   );
 };
 
