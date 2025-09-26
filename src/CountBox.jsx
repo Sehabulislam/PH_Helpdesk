@@ -1,10 +1,10 @@
 
 const CountBox = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   const pendingData = data.filter((element) => element.status == "Pending");
   const submittedData = data.filter((element) => element.status == "Submitted");
   const reviewedData = data.filter((element) => element.status == "Reviewed");
-  console.log(pendingData,submittedData,reviewedData);
+  // console.log(pendingData,submittedData,reviewedData);
 
   return (
       <div className="grid grid-cols-3 gap-[20px] my-[50px]">

@@ -9,39 +9,29 @@ const IssuesManagement = ({ fetchPromise }) => {
   const initialData = use(fetchPromise);
   const [data, setData] = useState(initialData);
 
-  // const filteredData =
-  //   toggleStatus == "All"
-  //     ? data
-  //     : data.filter((element) => element.status == toggleStatus);
+  const filteredData = 
+      (toggleStatus === "All" ? data : data.filter((element) => element.status === toggleStatus));
+  // console.log(filteredData);
 
-  // console.log({ toggleStatus, data });
-  // console.log(toggleStatus, filteredData);
   return (
     <div>
       {/* Box */}
       <CountBox data={data}></CountBox>
       
       {/* Toggle buttons */}
-      <ToggleBtn>toggleStatus={toggleStatus}
-        setToggleStatus={setToggleStatus}</ToggleBtn>
+      <ToggleBtn
+       toggleStatus={toggleStatus}
+        setToggleStatus={setToggleStatus}></ToggleBtn>
 
       {/* Cards */}
-      <Container>
-        {/* {filteredData.length == 0 ? (
-          <h2 className="font-bold text-[35px] text-center mb-9 text-purple-500 text-shadow-2xs">
-            No Data
-          </h2>
-        ) : (
           <div className="grid grid-cols-3 gap-[12px] mb-6">
-            {filteredData.map((issue, ind) => {
+            {filteredData.map(issue => {
               // console.log(issue);
               return (
-                <Card key={ind} issue={issue} data={data} setData={setData} />
+                <Card key={issue.ticketId} issue={issue} data={data} setData={setData} />
               );
             })}
           </div>
-        )} */}
-      </Container>
     </div>
   );
 };
